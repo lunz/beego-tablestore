@@ -12,11 +12,11 @@ It is an end-2-end solution integrating tablestore with Beego.
 
 ## Installing
 
-Step 1: Clone the code to your local storage. 
-Step 2: Set up a free trial account in [Alibaba Cloud](https://us.alibabacloud.com)
-Step 3: Create a tablestore instance, then get AccessKeyId, AccessKeySecret, InternetEndPoint, InstanceName
-Step 4: Open /conf/app.config, fill in AccessKeyId, AccessKeySecret, InternetEndPoint, InstanceName 
-Step 5: Open a command window, run below commands:
+* Step 1: Clone the code to your local storage. 
+* Step 2: Set up a free trial account in [Alibaba Cloud](https://us.alibabacloud.com)
+* Step 3: Create a tablestore instance, then get AccessKeyId, AccessKeySecret, InternetEndPoint, InstanceName
+* Step 4: Open /conf/app.config, fill in AccessKeyId, AccessKeySecret, InternetEndPoint, InstanceName 
+* Step 5: Open a command window, run below commands:
 
   ```dos
   go get ./...  # get dependencies
