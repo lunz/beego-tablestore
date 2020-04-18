@@ -30,10 +30,8 @@ This example is the end-2-end API solution demonstrating creating table, adding 
 ### Create Table
 Usually table creation only needs once. So the table name and column definitions are hard-coded. 
 
-  > URL:    `http://:8080/v1/comment/table/create`
-  > Method: `POST`
-  > Input:  {}
-
+  > POST:    `http://:8080/v1/comment/table/create`
+  
 ### Create or update a comment
 Create or Update is using the same endpoint. 
   - If primary key sets are same, this is the update. 
@@ -42,31 +40,29 @@ Create or Update is using the same endpoint.
 Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response if this record is new.
 
   > POST:    `http://:8080/v1/comment`
-
-      ```
+      
       {
         "ProdId":"123",
         "CommentId": 1585518496615000,   
         "Content":"I feel greate",
       }
-      ```
 
 ### Get single comment record by primary key set
 
-  > GET:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > GET:    `http://:8080/v1/comment/123/1585518496615000`
   
 
 ### Get the paged comments by prodId or prodId and commentId
 
   - First Page
-    > GET:    `http://:8080/v1/comment/batch/*123*`
+    > GET:    `http://:8080/v1/comment/batch/123`
 
   - Next Page when next page primary key set is available
-    > GET:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`
+    > GET:    `http://:8080/v1/comment/batch/123/1585518496615000`
 
 ### Delete single comment record by primary key set
 
-  > DELETE:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > DELETE:    `http://:8080/v1/comment/123/1585518496615000`
 
 ## Reference
  * [Alibaba Cloud TableStore Golang SDK](https://github.com/aliyun/alibaba-cloud-sdk-go)
