@@ -28,7 +28,7 @@ This example is the end-2-end API solution demonstrating creating table, adding 
 
 ## API
 ### Create Table
-Table creation is usually one time activity. So table name and column definitions are hard-coded. 
+Usually table creation only needs once. So the table name and column definitions are hard-coded. 
 
   > URL:    `http://:8080/v1/comment/table/create`
   > Method: `POST`
@@ -36,41 +36,41 @@ Table creation is usually one time activity. So table name and column definition
 
 ### Create or update a comment
 Create or Update is using the same endpoint. 
-  - If primary key sets are same, this updates; 
-  - If new or commentId is not supplied, this adds as new record.
+  - If primary key sets are same, this is the update. 
+  - If commentId is not supplied, this is the create.
 
-  > URL:    `http://:8080/v1/comment`
-  > Method: `POST`
-  >Input: 
+  > URL:    `http://:8080/v1/comment` <br/>
+  > Method: `POST`  <br/>
+  > Input: 
     
-    ```sh
-    {
-      "ProdId":"123",
-      "CommentId": 1585518496615000,   
-      "Content":"I feel greate",
-    }
-    ```
+      ```dos
+      {
+        "ProdId":"123",
+        "CommentId": 1585518496615000,   
+        "Content":"I feel greate",
+      }
+      ```
     
-Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response.
+Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response if this record is new.
 
 ### Get single comment record by primary key set
 
-  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`  <br/>
   > Method: `GET`
 
-### Get comments by page
+### Get the paged comments by prodId or prodId and commentId
 
   - First Page
-    > URL:    `http://:8080/v1/comment/batch/*123*`
+    > URL:    `http://:8080/v1/comment/batch/*123*` <br/>
     > Method: `GET`
 
   - Next Page when next page primary key set is available
-    > URL:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`
+    > URL:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`  <br/>
     > Method: `GET`
 
 ### Delete single comment record by primary key set
 
-  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`  <br/>
   > Method: `DELETE`
 
 ## Reference
