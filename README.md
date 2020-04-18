@@ -39,39 +39,34 @@ Create or Update is using the same endpoint.
   - If primary key sets are same, this is the update. 
   - If commentId is not supplied, this is the create.
 
-  > URL:    `http://:8080/v1/comment` <br/>
-  > Method: `POST`  <br/>
-  > Input: 
-    
-      ```dos
+Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response if this record is new.
+
+  > POST:    `http://:8080/v1/comment`
+
+      ```
       {
         "ProdId":"123",
         "CommentId": 1585518496615000,   
         "Content":"I feel greate",
       }
       ```
-    
-Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response if this record is new.
 
 ### Get single comment record by primary key set
 
-  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`  <br/>
-  > Method: `GET`
+  > GET:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  
 
 ### Get the paged comments by prodId or prodId and commentId
 
   - First Page
-    > URL:    `http://:8080/v1/comment/batch/*123*` <br/>
-    > Method: `GET`
+    > GET:    `http://:8080/v1/comment/batch/*123*`
 
   - Next Page when next page primary key set is available
-    > URL:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`  <br/>
-    > Method: `GET`
+    > GET:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`
 
 ### Delete single comment record by primary key set
 
-  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`  <br/>
-  > Method: `DELETE`
+  > DELETE:    `http://:8080/v1/comment/*123*/*1585518496615000*`
 
 ## Reference
  * [Alibaba Cloud TableStore Golang SDK](https://github.com/aliyun/alibaba-cloud-sdk-go)
