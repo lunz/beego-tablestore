@@ -29,6 +29,7 @@ This example is the end-2-end solution demonstrating how to solve this classic s
 ## API
 ### Create Table
 
+** Code is ready. API guide is in progress. 
 URL:    `<url>`
 Method:
 Input:
