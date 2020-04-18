@@ -30,46 +30,48 @@ This example is the end-2-end API solution demonstrating creating table, adding 
 ### Create Table
 Table creation is usually one time activity. So table name and column definitions are hard-coded. 
 
-URL:    `http://:8080/v1/comment/table/create`
-Method: `POST`
-Input:  {}
+  > URL:    `http://:8080/v1/comment/table/create`
+  > Method: `POST`
+  > Input:  {}
 
 ### Create or update a comment
 Create or Update is using the same endpoint. 
   - If primary key sets are same, this updates; 
   - If new or commentId is not supplied, this adds as new record.
 
-URL:    `http://:8080/v1/comment`
-Method: `POST`
-Input: 
-  ```json
-  {
-    "ProdId":"123",
-    "CommentId": 1585518496615000,   
-    "Content":"I feel greate",
-  }
-  ```
+  > URL:    `http://:8080/v1/comment`
+  > Method: `POST`
+  >Input: 
+    
+    ```sh
+    {
+      "ProdId":"123",
+      "CommentId": 1585518496615000,   
+      "Content":"I feel greate",
+    }
+    ```
+    
 Removing `commentId` will create a new record with an auto-generated commentId. Primary key set "prodId" and "commentId" are returned in response.
 
 ### Get single comment record by primary key set
 
-URL:    `http://:8080/v1/comment/**123**//**1585518496615000**`
-Method: `GET`
+  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > Method: `GET`
 
 ### Get comments by page
 
-- First Page
-URL:    `http://:8080/v1/comment/batch/**123**`
-Method: `GET`
+  - First Page
+    > URL:    `http://:8080/v1/comment/batch/*123*`
+    > Method: `GET`
 
-- Next Page when next page primary key set is available
-URL:    `http://:8080/v1/comment/batch/**123**/**1585518496615000**`
-Method: `GET`
+  - Next Page when next page primary key set is available
+    > URL:    `http://:8080/v1/comment/batch/*123*/*1585518496615000*`
+    > Method: `GET`
 
 ### Delete single comment record by primary key set
 
-URL:    `http://:8080/v1/comment/**123**/**1585518496615000**`
-Method: `DELETE`
+  > URL:    `http://:8080/v1/comment/*123*/*1585518496615000*`
+  > Method: `DELETE`
 
 ## Reference
  * [Alibaba Cloud TableStore Golang SDK](https://github.com/aliyun/alibaba-cloud-sdk-go)
