@@ -30,7 +30,7 @@ This example is the end-2-end API solution demonstrating creating table, adding 
 ### Create Table
 Usually table creation only needs once. So the table name and column definitions are hard-coded. 
 
-  > POST:    `http://:8080/v1/comment/table/create`
+  POST:    `http://:8080/v1/comment/table/create`
   
 ### Create or update a comment
 Create or Update is using the same endpoint. 
