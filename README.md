@@ -55,10 +55,12 @@ Removing `commentId` will create a new record with an auto-generated commentId. 
 ### Get the paged comments by prodId or prodId and commentId
 
   - First Page
-      GET:    `http://:8080/v1/comment/batch/123`
+  
+        GET:  `http://:8080/v1/comment/batch/123`
 
   - Next Page when next page primary key set is available
-      GET:    `http://:8080/v1/comment/batch/123/1585518496615000`
+  
+        GET:  `http://:8080/v1/comment/batch/123/1585518496615000`
 
 ### Delete single comment record by primary key set
 
